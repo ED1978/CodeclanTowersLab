@@ -4,10 +4,12 @@ public class Hotel {
 
     private ArrayList<Bedroom> bedrooms;
     private ConferenceRoom conferenceRooms;
+    private ArrayList<Booking> bookings;
 
-    public Hotel(ArrayList<Bedroom> bedrooms, ConferenceRoom conferenceRooms ){
+    public Hotel(ArrayList<Bedroom> bedrooms, ConferenceRoom conferenceRooms, ArrayList<Booking> bookings ){
         this.bedrooms = bedrooms;
         this.conferenceRooms = conferenceRooms;
+        this.bookings = bookings;
     }
 
     public int bedroomCount() {
@@ -28,5 +30,13 @@ public class Hotel {
 
     public void checkOutGuestFromConferenceRoom(Guest guest, ConferenceRoom conferenceRoom){
         conferenceRoom.removeGuest(guest);
+    }
+
+    public int bookingCount(){
+        return this.bookings.size();
+    }
+
+    public void addBooking(Booking booking){
+        this.bookings.add(booking);
     }
 }
