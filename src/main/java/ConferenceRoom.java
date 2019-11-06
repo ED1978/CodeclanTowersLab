@@ -30,4 +30,9 @@ public class ConferenceRoom {
         }
     }
 
+    public void removeGuest(Guest guest){
+        int index = this.guests.indexOf(guest);
+        Guest foundGuest = this.guests.remove(index);
+    }
+
 }
