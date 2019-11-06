@@ -42,4 +42,5 @@ public class HotelTest {
     public void hasBedrooms() {
         assertEquals(5, hotel.bedroomCount());
     }
+
 }

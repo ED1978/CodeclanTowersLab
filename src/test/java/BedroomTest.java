@@ -31,4 +31,23 @@ public class BedroomTest {
         bedroom.addGuest(guest1);
         assertEquals(1, bedroom.guestCount());
     }
+
+    @Test
+    public void checkHasEnoughCapacity() {
+        assertEquals(true, bedroom.hasEnoughCapacity());
+    }
+
+    @Test
+    public void canAddGuestIfEnoughCapacity() {
+        bedroom.addGuest(guest1);
+        assertEquals(1, bedroom.guestCount());
+    }
+
+    @Test
+    public void cannotAddGuestIfFull() {
+        bedroom.addGuest(guest1);
+        bedroom.addGuest(guest2);
+        bedroom.addGuest(guest3);
+        assertEquals(2, bedroom.guestCount());
+    }
 }

@@ -19,8 +19,18 @@ public class Bedroom {
         return this.guests.size();
     }
 
+    public boolean hasEnoughCapacity(){
+        if (guestCount() < this.capacity){
+            return true;
+            } else {
+            return false;
+        }
+    }
+
     public void addGuest(Guest guest){
-        this.guests.add(guest);
+        if(hasEnoughCapacity() == true){
+            this.guests.add(guest);
+        }
     }
 
 }
