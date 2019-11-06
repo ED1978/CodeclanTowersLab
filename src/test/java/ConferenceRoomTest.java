@@ -23,12 +23,31 @@ public class ConferenceRoomTest {
         guest3 = new Guest("Chris");
         guest4 = new Guest("Mark");
         guest5 = new Guest("David");
-        conferenceRoom = new ConferenceRoom("Blue Room", 12);
+        conferenceRoom = new ConferenceRoom("Blue Room", 2);
     }
 
     @Test
     public void canAddGuest() {
         conferenceRoom.addGuest(guest1);
         assertEquals(1, conferenceRoom.guestCount());
+    }
+
+    @Test
+    public void checkHasCapacity() {
+        assertEquals(true, conferenceRoom.hasCapacity());
+    }
+
+    @Test
+    public void canAddGuestIfEnoughCapacity() {
+        conferenceRoom.addGuest(guest1);
+        assertEquals(1, conferenceRoom.guestCount());
+    }
+
+    @Test
+    public void cannotAddGuestIfFull() {
+        conferenceRoom.addGuest(guest1);
+        conferenceRoom.addGuest(guest2);
+        conferenceRoom.addGuest(guest3);
+        assertEquals(2, conferenceRoom.guestCount());
     }
 }

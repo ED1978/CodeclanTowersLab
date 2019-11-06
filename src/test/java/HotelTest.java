@@ -30,6 +30,11 @@ public class HotelTest {
         bedroom3 = new Bedroom("3", 4, "Family");
         bedroom4 = new Bedroom("4", 1, "Single");
         bedroom5 = new Bedroom("5", 2, "King");
+        guest1 = new Guest("Sarah");
+        guest2 = new Guest("Steven");
+        guest3 = new Guest("Chris");
+        guest4 = new Guest("Mark");
+        guest5 = new Guest("David");
         bedrooms.add(bedroom1);
         bedrooms.add(bedroom2);
         bedrooms.add(bedroom3);
@@ -43,4 +48,9 @@ public class HotelTest {
         assertEquals(5, hotel.bedroomCount());
     }
 
+    @Test
+    public void canCheckGuestIntoBedroom() {
+        hotel.checkInGuestToBedroom(guest1, bedroom1);
+        assertEquals(1, bedroom1.guestCount());
+    }
 }

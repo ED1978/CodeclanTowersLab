@@ -17,7 +17,17 @@ public class ConferenceRoom {
     }
 
     public void addGuest(Guest guest){
-        this.guests.add(guest);
+        if(hasCapacity() == true){
+            this.guests.add(guest);
+        }
+    }
+
+    public boolean hasCapacity(){
+        if (guestCount() < this.capacity){
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
