@@ -36,7 +36,9 @@ public class Hotel {
         return this.bookings.size();
     }
 
-    public void addBooking(Booking booking){
+    public void addBooking(Bedroom bedroom, int nights){
+        Booking booking = new Booking(bedroom, nights);
         this.bookings.add(booking);
     }
+
 }

@@ -93,16 +93,9 @@ public class HotelTest {
         assertEquals(1, hotel.bookingCount());
     }
 
-//    @Test
-//    public void canCreateBooking() {
-//        hotel.createBooking(bedroom1, 4);
-//        assertEquals(1, hotel.bookingCount());
-//    }
-
-
     @Test
     public void canAddBooking() {
-        hotel.addBooking(booking1);
+        hotel.addBooking(bedroom1, 4);
         assertEquals(2, hotel.bookingCount());
     }
 }
