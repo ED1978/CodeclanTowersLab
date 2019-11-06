@@ -24,7 +24,7 @@ public class HotelTest {
     @Before
     public void before(){
         bedrooms = new ArrayList<Bedroom>();
-        conferenceRoom = new ConferenceRoom();
+        conferenceRoom = new ConferenceRoom("Blue Room", 12);
         bedroom1 = new Bedroom("1", 2, "Double");
         bedroom2 = new Bedroom("2", 4, "Family");
         bedroom3 = new Bedroom("3", 4, "Family");
